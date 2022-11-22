@@ -1,0 +1,178 @@
+/*=============================================
+=            CSS Reset            =
+=============================================*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: #e7e0e9;
+  color: #211925;
+  font-family: "Raleway", sans-serif;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*=============================================
+  =            Main page CSS            =
+  =============================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap");
+
+a {
+  text-decoration: none;
+  color: #00c9b5;
+}
+
+a:hover {
+  color: #ce7886;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #3179a0;
+}
+
+/*----------  Nav bar ----------*/
+
+nav {
+  /* height: 2rem; */
+  width: 100vw;
+  display: flex;
+
+  background: #55414a;
+  align-items: center;
+
+  flex-flow: column;
+  place-content: center center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.navmenu {
+  list-style: none;
+  display: flex;
+
+  flex-flow: column;
+  align-items: center;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+/*----------  Header  ----------*/
+
+header {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.header-text {
+  width: 40%;
+}
+
+/*----------  Main section  ----------*/
+
+main {
+  display: grid;
+  gap: 2rem 2rem;
+  margin: 0 auto;
+}
+
+main .item {
+  display: flex;
+  flex-flow: column;
+  place-content: center center;
+  align-items: center;
+  text-align: center;
+}
+
+.item i {
+  color: #f8a090;
+}
+
+.description {
+  display: grid;
+}
+
+.description img {
+  width: 300px;
+}
+
+/*----------  Responsive layout  ----------*/
+
+@media screen and (min-width: 600px) {
+  nav {
+    flex-flow: row wrap;
+    place-content: center space-between;
+
+    padding: 2rem 1rem;
+  }
+
+  .navmenu {
+    flex-flow: row wrap;
+    gap: 1rem;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 80%;
+  }
+
+  .description {
+    grid-column: 1 / span 3;
+  }
+}
