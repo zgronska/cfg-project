@@ -2,6 +2,7 @@
 =            CSS Reset            =
 =============================================*/
 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap");
 *,
 *::before,
 *::after {
@@ -63,7 +64,6 @@ h6 {
   =            Main page CSS            =
   =============================================*/
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap");
 a {
     color: #00c9b5;
     position: relative;
