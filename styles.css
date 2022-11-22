@@ -159,7 +159,11 @@ main {
 main .item {
   display: flex;
   flex-flow: column;
+<<<<<<< HEAD
   place-content: center center;
+=======
+  place-content: center flex-start;
+>>>>>>> parent of 54081b5 (Merge branch 'main' of https://github.com/zgronska/cfg-project)
   align-items: center;
   gap: 0.5rem;
 }
@@ -181,12 +185,20 @@ main .item {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .description img {
   max-width: 400px;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+=======
+.description iframe {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+>>>>>>> parent of 54081b5 (Merge branch 'main' of https://github.com/zgronska/cfg-project)
 }
 
 /*----------  Footer  ----------*/
