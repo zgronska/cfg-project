@@ -9,6 +9,7 @@
 }
 * {
   margin: 0;
+  /* border: 1px solid red; */
 }
 html,
 body {
@@ -56,12 +57,31 @@ h6 {
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap");
 
 a {
-  text-decoration: none;
   color: #00c9b5;
+  position: relative;
+  text-decoration: none;
+  z-index: 999;
+  padding: 0.5rem;
+}
+
+a::before {
+  background: #ce7886;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 a:hover {
-  color: #ce7886;
+  color: #55414a;
 }
 
 h1,
@@ -76,13 +96,11 @@ h6 {
 /*----------  Nav bar ----------*/
 
 nav {
-  /* height: 2rem; */
-  width: 100vw;
+  width: 100%;
   display: flex;
-
   background: #55414a;
   align-items: center;
-
+  color: #e7e0e9;
   flex-flow: column;
   place-content: center center;
   gap: 1rem;
@@ -110,25 +128,27 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 100vw;
+  width: 100%;
   min-height: 40%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-left: 3rem;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
 .header-text {
-  width: 40%;
+  max-width: 40%;
 }
 
 /*----------  Main section  ----------*/
 
 main {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem 2rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 main .item {
@@ -137,6 +157,7 @@ main .item {
   place-content: center center;
   align-items: center;
   text-align: center;
+  gap: 0.5rem;
 }
 
 .item i {
@@ -144,21 +165,55 @@ main .item {
 }
 
 .description {
-  display: grid;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
 }
 
 .description img {
-  width: 300px;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/*----------  Footer  ----------*/
+footer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  background: #55414a;
+  color: #e7e0e9;
+  align-items: center;
+  flex-flow: column;
+  place-content: center center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer hr {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(249, 248, 113, 0),
+    rgba(249, 248, 113, 0.75),
+    rgba(249, 248, 113, 0)
+  );
 }
 
 /*----------  Responsive layout  ----------*/
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   nav {
     flex-flow: row wrap;
     place-content: center space-between;
-
-    padding: 2rem 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .navmenu {
@@ -166,13 +221,22 @@ main .item {
     gap: 1rem;
   }
 
+  header {
+    justify-content: flex-start;
+    padding-left: 3rem;
+    text-align: left;
+  }
+
   main {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     max-width: 80%;
+    row-gap: 3rem;
   }
 
   .description {
-    grid-column: 1 / span 3;
+    grid-column: 1 / 4;
+    flex-flow: row;
+    gap: 1rem;
+    text-align: left;
   }
 }
