@@ -159,7 +159,7 @@ main {
 main .item {
   display: flex;
   flex-flow: column;
-  place-content: center center;
+  place-content: center flex-start;
   align-items: center;
   gap: 0.5rem;
 }
@@ -181,12 +181,11 @@ main .item {
   align-items: center;
 }
 
-.description img {
+.description iframe {
   max-width: 400px;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
 /*----------  Footer  ----------*/
