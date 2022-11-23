@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="js.js"></script>
+
     <script
       src="https://kit.fontawesome.com/a4c322cc10.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -20,9 +21,9 @@
         ></a>
       </div>
       <ul class="navmenu">
-        <li><a href="">link link link link </a></li>
-        <li><a href="">link</a></li>
-        <li><a href="">link</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://codefirstgirls.com">Code First Girls</a></li>
       </ul>
     </nav>
     <header>
@@ -43,19 +44,28 @@
         </div>
         <div class="container">
           <form action="">
-            <label for="name">Name</label>
-            <input type="text" id="fname" name="fname" /><br /><br />
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Rick" />
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" placeholder="Astley" />
             <label for="mail"> Your e-mail</label>
-            <input type="mail" id="mail" />
-            <br /><br />
-            <label for="question">Ask us a question</label>
-            <input type="question" id="question" />
-            <br /><br />
-            <a
+            <input type="email" id="mail" placeholder="rastley@gmail.com" />
+            <label for="message">Ask us a question</label>
+            <textarea
+              name="message"
+              rows="4"
+              cols="20"
+              placeholder="Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you"></textarea>
+
+            <!-- <a
               href="mailto:zgronska@gmail.com, czerwonkabozena@gmail.com, cherrybelle848@gmail.com"
-            >
-              <input type="submit" value="Submit" />
-            </a>
+            > -->
+            <input type="submit" value="Submit" onclick="sendForm();" />
           </form>
         </div>
       </div>
